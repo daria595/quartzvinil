@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quartzvinil — Каталог</title>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<main>
+  <div class="cards-grid" id="cardsGrid"></div>
+</main>
+
+<div class="overlay" id="overlay" onclick="outsideClose(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="mForm">
+      <h2>КУПИТЬ В 1 КЛИК</h2>
+      <div class="modal-product">
+        <img class="modal-product-img" id="mImg" src="" alt="">
+        <div class="modal-product-info">
+          <div class="modal-product-name" id="mName"></div>
+          <div class="modal-product-class" id="mClass"></div>
+          <div class="modal-product-price" id="mPrice"></div>
+        </div>
+      </div>
+      <div class="field-wrap">
+        <input type="text" id="fName" placeholder="* Имя">
+        <div class="field-error" id="errName">Заполните Имя</div>
+      </div>
+      <div class="field-wrap">
+        <input type="tel" id="fPhone" placeholder="* +7 (___) ___-__-__">
+        <div class="field-error" id="errPhone">Заполните номер телефона</div>
+      </div>
+      <label class="modal-consent">
+        <input type="checkbox" id="fConsent">
+        Даю согласие на обработку персональных данных
+      </label>
+      <button class="modal-submit" onclick="submitOrder()">Купить</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast">Ваша заявка успешно отправлена!</div>
+
+<script src="script.js"></script>
+</body>
+</html>
