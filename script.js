@@ -76,7 +76,7 @@ function renderCards() {
         <div class="card-price-row">
           ${formatPriceHTML(p.price, p.oldPrice)}
         </div>
-        <button class="btn-buy" onclick="openModal(${p.id})">Купить в 1 клик</button>
+        <button class="btn-buy" onclick="openModal(${p.id})">Купить</button>
       </div>
     </div>
   `).join('');

@@ -20,122 +20,133 @@ body {
   color: var(--black); 
 }
 
-main { 
-  max-width: 960px; 
-  margin: 36px auto; 
-  padding: 0 20px 60px; 
+main {
+  max-width: 1280px;
+  margin: 36px auto;
+  padding: 0 40px 60px;
 }
 
-.cards-grid { 
-  display: grid; 
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 16px; 
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: stretch;
 }
 
 /* Карточки */
-.card { 
+.card {
   background: #f4f4f6;
-  border-radius: 14px; 
-  overflow: hidden; 
-  transition: box-shadow .2s; 
+  border-radius: 15px;
+  overflow: hidden;
+  transition: box-shadow .2s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.card:hover { 
-  box-shadow: 0 6px 24px rgba(0,0,0,.1); 
+.card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,.1);
 }
 
-.card-img-wrap { 
-  position: relative; 
-  aspect-ratio: 2/3; 
-  overflow: hidden; 
-  background: #e8e8e8; 
+.card-img-wrap {
+  position: relative;
+  aspect-ratio: 425 / 590;
+  overflow: hidden;
+  background: #e8e8e8;
+  flex-shrink: 0;
 }
 
-.card-img-wrap img { 
-  width: 100%; 
-  height: 100%; 
-  object-fit: cover; 
-  display: block; 
+.card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* Значки */
-.badges { 
-  position: absolute; 
-  top: 12px; 
-  right: 12px; 
-  display: flex; 
-  gap: 10px; 
-  z-index: 2; 
+.badges {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  gap: 8px;
+  z-index: 2;
 }
 
-.badge { 
-  width: 36px; 
-  height: 36px; 
-  border-radius: 50%; 
-  display: flex; 
-  align-items: center; 
-  justify-content: center; 
-  font-size: 13px; 
-  font-weight: 800; 
-}
-
-.badge-pct { 
-  background: var(--lime); 
-  color: #000000;
-  font-family: 'Manrope', sans-serif;
-  font-size: 17px; 
+.badge {
+  width: 61px;
+  height: 61px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-weight: 500;
 }
 
-.badge-new { 
-  background: #FFFFFF; 
-  color: #000000; 
+.badge-pct {
+  background: var(--lime);
+  color: #000000;
   font-family: 'Manrope', sans-serif;
-  font-size: 13px; 
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.badge-new {
+  background: #FFFFFF;
+  color: #000000;
+  font-family: 'Manrope', sans-serif;
+  font-size: 20px;
   font-weight: 500;
 }
 
 /* Точки */
-.card-dots { 
-  position: absolute; 
-  bottom: 10px; 
-  left: 50%; 
-  transform: translateX(-50%); 
-  display: flex; 
-  gap: 5px; 
+.card-dots {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
 }
 
-.dot { 
-  width: 6px; 
-  height: 6px; 
-  border-radius: 50%; 
-  background: rgba(255,255,255,.5); 
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255,255,255,.5);
 }
 
-.dot.active { 
-  background: var(--white); 
+.dot.active {
+  background: var(--white);
 }
 
 /* Тело карточки */
-.card-body { 
-  padding: 12px 14px 16px; 
+.card-body {
+  padding: 16px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
-.card-name { 
+.card-name {
   font-family: 'Manrope', sans-serif;
-  font-size: 12px; 
-  font-weight: 500; 
-  margin-bottom: 4px; 
-  line-height: 1.4; 
-  text-transform: uppercase; 
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 0;
+  line-height: 1.3;
+  text-transform: uppercase;
   color: #000000;
 }
 
-.card-class { 
-  font-size: 11px; 
-  color: var(--gray-text); 
-  margin-bottom: 10px; 
-  text-align: right; 
+.card-class {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 1.3;
+  margin-bottom: 4px;
+  text-align: right;
 }
 
 /* Цены */
@@ -143,39 +154,45 @@ main {
   display: flex;
   align-items: baseline;
   flex-wrap: wrap;
-  gap: 6px;
-  margin-bottom: 12px;
+  gap: 4px;
+  margin-bottom: 20px;
   justify-content: flex-end;
 }
 
 .price-cur {
-  font-size: 17px;
+  font-size: 30px;
   font-weight: 500;
+  line-height: 1.3;
 }
 
 .price-old {
-  font-size: 17px;
-  color: var(--gray-text);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: rgba(0, 0, 0, 0.3);
   text-decoration: line-through;
 }
 
 .price-unit {
-  font-size: 17px;
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 1.3;
   color: var(--black);
 }
 
-/* Кнопка купить */
-.btn-buy { 
-  display: block; 
-  width: 100%; 
-  padding: 11px; 
-  background: #f4f4f6; 
-  border: 1px solid var(--black); 
-  border-radius: 50px; 
-  font-family: 'Manrope', sans-serif; 
-  font-size: 13px; 
-  font-weight: 400; 
-  cursor: pointer; 
+.btn-buy {
+  display: block;
+  width: 100%;
+  padding: 15px 30px 16px;
+  background: #f4f4f6;
+  border: 1px solid var(--black);
+  border-radius: 50px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  line-height: 1.5;
+  cursor: pointer;
+  margin-top: auto;
 }
 
 .btn-buy:hover { 
@@ -199,113 +216,113 @@ main {
   display: flex; 
 }
 
-.modal { 
-  background: var(--white); 
-  border-radius: 16px; 
-  padding: 28px 24px 24px; 
-  width: 380px; 
-  max-width: 95vw; 
-  position: relative; 
+.modal {
+  background: var(--white);
+  border-radius: 20px;
+  padding: 40px 50px 50px;
+  width: 725px;
+  max-width: 95vw;
+  position: relative;
 }
 
-.modal-close { 
-  position: absolute; 
-  top: 14px; 
-  right: 16px; 
-  background: none; 
-  border: none; 
-  font-size: 20px; 
-  cursor: pointer; 
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 28px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
-.modal h2 { 
+.modal h2 {
   font-family: 'Manrope', sans-serif;
   font-weight: 500;
-  font-size: 28px;
-  line-height: 130%;
-  letter-spacing: 0;
-  margin-bottom: 24px; 
+  font-size: 46px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  margin-bottom: 40px;
 }
 
-.modal-product { 
-  display: flex; 
-  gap: 12px; 
-  margin-bottom: 24px; 
+.modal-product {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 60px;
 }
 
-.modal-product-img { 
-  width: 80px; 
-  height: 80px; 
-  border-radius: 12px; 
-  object-fit: cover; 
+.modal-product-img {
+  width: 167px;
+  height: 167px;
+  border-radius: 15px;
+  object-fit: cover;
   background: #f0f0f0;
+  flex-shrink: 0;
 }
 
 .modal-product-info {
   flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-.modal-product-name { 
-  font-size: 13px; 
-  font-weight: 700; 
-  text-transform: uppercase; 
+.modal-product-name {
+  font-size: 26px;
+  font-weight: 600;
+  text-transform: uppercase;
   line-height: 1.3;
-  margin-bottom: 4px;
+  color: var(--black);
 }
 
-.modal-product-class { 
-  font-size: 12px; 
-  color: var(--gray-text); 
-  margin-bottom: 8px;
+.modal-product-class {
+  font-size: 21px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: right;
+  margin-top: auto;
 }
 
-.modal-product-price { 
+.modal-product-price {
   display: flex;
   justify-content: flex-end;
   align-items: baseline;
-  gap: 8px;
+  gap: 4px;
   flex-wrap: wrap;
 }
 
-.modal-product-price .current-price {
-  font-size: 18px;
+.field-wrap {
+  margin-bottom: 0;
+}
+
+.modal-product + .field-wrap {
+  margin-bottom: 36px;
+}
+
+.field-wrap + .field-wrap {
+  margin-bottom: 12px;
+}
+
+.modal input[type=text],
+.modal input[type=tel] {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  padding: 19px 40px 20px;
+  font-family: 'Manrope', sans-serif;
+  font-size: 21px;
   font-weight: 400;
-  color: var(--black);
-}
-
-.modal-product-price .old-price {
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--gray-text);
-  text-decoration: line-through;
-}
-
-.modal-product-price .unit {
-  font-size: 18px;
-  font-weight: 400;
-  color: var(--black);
-}
-
-.field-wrap { 
-  margin-bottom: 16px; 
-}
-
-.modal input[type=text], 
-.modal input[type=tel] { 
-  width: 100%; 
-  border: 1.5px solid var(--gray-light); 
-  border-radius: 50px; 
-  padding: 14px 18px; 
-  font-family: 'Manrope', sans-serif; 
-  font-size: 14px; 
   transition: border-color 0.2s;
 }
 
 .modal input[type=text]::placeholder,
 .modal input[type=tel]::placeholder {
-  color: #000000;
+  color: rgba(0, 0, 0, 0.7);
   font-family: 'Manrope', sans-serif;
-  font-size: 14px;
+  font-size: 21px;
   font-weight: 400;
 }
 
@@ -335,11 +352,12 @@ main {
   display: flex;
   align-items: center;
   gap: 12px;
-  font-size: 13px;
-  margin: 20px 0 24px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.3;
+  margin: 0 0 57px;
   cursor: pointer;
   color: rgba(0, 0, 0, 0.5);
-  font-weight: 400;
 }
 
 .modal-consent input[type="checkbox"] {
@@ -376,17 +394,18 @@ main {
   border-radius: 50%;
 }
 
-.modal-submit { 
-  width: 100%; 
-  padding: 16px; 
-  background: var(--black); 
-  color: var(--white); 
-  border: none; 
-  border-radius: 50px; 
+.modal-submit {
+  width: 100%;
+  padding: 19px 40px 20px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  border-radius: 50px;
   font-family: 'Manrope', sans-serif;
-  font-weight: 400; 
-  font-size: 16px;
-  cursor: pointer; 
+  font-weight: 400;
+  font-size: 21px;
+  line-height: 1.5;
+  cursor: pointer;
   transition: opacity 0.2s;
 }
 
@@ -419,48 +438,85 @@ main {
 
 /* Адаптив */
 @media (max-width: 1024px) {
-  .cards-grid { 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 14px; 
+  main {
+    padding: 0 20px 60px;
+  }
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
   }
 }
 
 @media (max-width: 600px) {
-  main { 
-    margin: 16px auto; 
-    padding: 0 12px 40px; 
+  main {
+    margin: 16px auto;
+    padding: 0 12px 40px;
   }
-  
-  .cards-grid { 
-    grid-template-columns: repeat(2, 1fr); 
-    gap: 10px; 
+
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
-  
-  .card-body { 
-    padding: 10px 10px 12px; 
+
+  .badges {
+    top: 12px;
+    right: 12px;
+    gap: 6px;
   }
-  
-  .card-name { 
-    font-size: 11px; 
+
+  .badge {
+    width: 40px;
+    height: 40px;
   }
-  
-  .price-cur { 
-    font-size: 14px; 
+
+  .badge-pct {
+    font-size: 17px;
   }
-  
-  .price-old { 
-    font-size: 11px; 
+
+  .badge-new {
+    font-size: 14px;
   }
-  
-  .btn-buy { 
-    font-size: 12px; 
-    padding: 9px; 
+
+  .card-body {
+    padding: 10px 12px 12px;
   }
-  
-  .toast { 
-    white-space: normal; 
-    width: 90%; 
-    text-align: center; 
+
+  .card-name {
+    font-size: 14px;
+    line-height: 1.3;
+  }
+
+  .card-class {
+    font-size: 12px;
+    margin-bottom: 2px;
+  }
+
+  .card-price-row {
+    margin-bottom: 12px;
+    gap: 2px;
+  }
+
+  .price-cur {
+    font-size: 20px;
+  }
+
+  .price-old {
+    font-size: 20px;
+  }
+
+  .price-unit {
+    font-size: 20px;
+  }
+
+  .btn-buy {
+    font-size: 14px;
+    padding: 10px 16px 11px;
+  }
+
+  .toast {
+    white-space: normal;
+    width: 90%;
+    text-align: center;
   }
 
   .modal h2 {
